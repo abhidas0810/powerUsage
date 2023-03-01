@@ -44,6 +44,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// REST API for user login
 router.post("/login", async (req, res) => {
   try {
     let user = req.body;
