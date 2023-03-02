@@ -3,7 +3,7 @@ create TABLE powerUsage (
     fromTime datetime,
     toTime datetime,
     duration time,
-    unitConsumed int,
+    unitsConsumed int,
     applianceType varchar(10),
     userId int not null,
     foreign key (userId) references users(userId)
