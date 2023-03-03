@@ -54,7 +54,7 @@ router.post("/addPowerUsage", authentication, async (req, res) => {
     }
 
     // calculating duration in minutes
-    let duration = calculateDuration(powerUsage.fromTime, powerUsage.toTime);
+    let duration = calculateDuration(powerUsage.fromTi powerUsage.toTime);
 
     // calculating units Consumed as per usage
     let unitsConsumed = calculateUnitsConsumed(
