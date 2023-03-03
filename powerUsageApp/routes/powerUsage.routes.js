@@ -6,6 +6,9 @@ const connection = require("../serverAndConnection/connection");
 const router = express.Router();
 // for cheking authentication
 const authentication = require("../middleware/authentication");
+const lowPower = 1;
+const midPower = 2;
+const highPower = 3;
 
 // for cheking applicance type it must be 3 types (low-power, high-power, mid-power)
 const checkApplianceType = (applianceType) => {
@@ -23,25 +26,54 @@ const checkApplianceType = (applianceType) => {
   }
 };
 
+let calculateDuration = (startTime, endTime) => {
+  let start = new Date(startTime);
+  let end = new Date(endTime);
+  return Math.floor(((end.getTime() - start.getTime()) / 1000 / 60) << 0);
+};
+
+let calculateUnitsConsumed = (applianceType, duration) => {
+  if (applianceType === "low-power" || applianceType === "LOW-POWER") {
+    return duration * lowPower;
+  } else if (applianceType === "mid-power" || applianceType === "MID-POWER") {
+    return duration * midPower;
+  } else {
+    return duration * highPower;
+  }
+};
+
 // REST API for adding power usage
 router.post("/addPowerUsage", authentication, async (req, res) => {
   try {
     // power Usage data provided by user
     let powerUsage = req.body;
+
+    // checking appliance type is valid or not
     if (!checkApplianceType(powerUsage.applianceType)) {
       return res.status(400).json({ message: "wrong applianceType" });
     }
+
+    // calculating duration in minutes
+    let duration = calculateDuration(powerUsage.fromTime, powerUsage.toTime);
+
+    // calculating units Consumed as per usage
+    let unitsConsumed = calculateUnitsConsumed(
+      powerUsage.applianceType,
+      duration
+    );
+
     // query for adding new power usage record in database
     let query =
       "insert into powerUsage (fromTime,toTime,duration,unitsConsumed,applianceType,userId) values (?,?,?,?,?,?)";
+
     // putting values in query
     await connection.query(
       query,
       [
         powerUsage.fromTime,
         powerUsage.toTime,
-        powerUsage.duration,
-        powerUsage.unitsConsumed,
+        duration,
+        unitsConsumed,
         powerUsage.applianceType,
         powerUsage.userId,
       ],

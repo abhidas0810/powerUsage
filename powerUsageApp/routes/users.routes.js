@@ -66,7 +66,7 @@ router.post("/login", async (req, res) => {
           let userId = result[0].userId;
           // genrating token with 5 minutes validity
           const jwtToken = jwt.sign({ userId }, process.env.secret, {
-            expiresIn: "300s",
+            expiresIn: "300h",
           });
           // returning successful response with token
           return res.status(200).json({
