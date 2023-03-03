@@ -4,7 +4,7 @@
 
 ## About
 
-The backend of power usage app where the user can register themselves. After registration user can login and add power usage, get list power usage and get list power usage day wise.
+The backend of power usage app where the user can register themselves. After registration user can login and add power usage, get list of power usage and get list of power usage day wise.
 
 ## Author
 - [Abhishek Das](https://github.com/abhidas0810)
@@ -66,3 +66,15 @@ Then copy paste the mysql queries from powerUsage.sql file.
 - http://localhost:8888/user/login
 
 ![Logo](https://www.linkpicture.com/q/login_3.png)
+
+**REST API for adding power usage**
+
+- http://localhost:8888/powerUsage/addPowerUsage
+
+![Logo](https://www.linkpicture.com/q/addPowerUsage.png)
+
+**REST API for getting list of power usage in given time**
+
+- http://localhost:8888/powerUsage/addPowerUsage
+
+![Logo](https://www.linkpicture.com/q/listPowerUsage.png)
