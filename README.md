@@ -65,4 +65,4 @@ Then copy paste the mysql queries from powerUsage.sql file.
 
 - http://localhost:8888/user/login
 
-![Logo]()
+![Logo](https://www.linkpicture.com/q/login_3.png)
