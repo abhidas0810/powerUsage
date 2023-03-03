@@ -46,6 +46,6 @@ Clone the project
 - npm i jsonwebtoken
 - npm install dotenv
 
-Start the server
+**Start the server**
 
--npm run server
+- npm run server
