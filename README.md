@@ -46,6 +46,11 @@ Clone the project
 - npm i jsonwebtoken
 - npm install dotenv
 
+**Create database and tables**
+
+Go to databaseConfiguration folder first open user.sql copy all queries and paste the mysql queries in your mysql command line client.
+Then copy paste the mysql queries from powerUsage.sql file.
+
 **Start the server**
 
 - npm run server
