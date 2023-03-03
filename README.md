@@ -59,11 +59,16 @@ Then copy paste the mysql queries from powerUsage.sql file.
 
 - http://localhost:8888/user/register
 
+Mobile number must not be length more than 10.
+
 ![Logo](https://www.linkpicture.com/q/userregister.png)
 
 **REST API for user login**
 
 - http://localhost:8888/user/login
+
+User can login with user name or email id or mobile number nad password.
+After login keep note of token and userId which will be required for further operation.
 
 ![Logo](https://www.linkpicture.com/q/login_3.png)
 
@@ -71,15 +76,22 @@ Then copy paste the mysql queries from powerUsage.sql file.
 
 - http://localhost:8888/powerUsage/addPowerUsage
 
+User have to provide fromTime, toTime, applianceType and userId.
+Time format must be maintained (YYYY-MM-DD hh:mm:ss).
+
 ![Logo](https://www.linkpicture.com/q/addPowerUsage.png)
 
 **REST API for getting list of power usage in given time**
 
 - http://localhost:8888/powerUsage/addPowerUsage
 
+User have to provide fromTime, toTime and userId.
+
 ![Logo](https://www.linkpicture.com/q/listPowerUsage.png)
 
 **REST API for getting list of power usage date wise**
+
+User have to provide fromTime, toTime and userId.
 
 - http://localhost:8888/powerUsage/listPowerUsagePerDate
 
