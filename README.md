@@ -28,3 +28,12 @@ The backend of power usage app where the user can register themselves. After reg
 **Version Control:** Git
 
 **Documentation:** Postman
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/abhidas0810/powerUsage.git
+```
+
