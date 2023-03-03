@@ -29,6 +29,9 @@ The backend of power usage app where the user can register themselves. After reg
 
 **Documentation:** Postman
 
+##  Entity Relationship
+![Power Usage App (ER Diagram)](https://www.linkpicture.com/q/ER-diagram_1.png)
+
 ## Run Locally
 
 Clone the project
