@@ -54,3 +54,9 @@ Then copy paste the mysql queries from powerUsage.sql file.
 **Start the server**
 
 - npm run server
+
+**REST API for user registration**
+
+- http://localhost:8888/user/register
+
+![Logo](https://www.linkpicture.com/q/userregister.png)
