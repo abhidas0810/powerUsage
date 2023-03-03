@@ -37,3 +37,15 @@ Clone the project
   git clone https://github.com/abhidas0810/powerUsage.git
 ```
 
+**Packages needed to install**
+
+- npm init -y
+- npm install --save express
+- npm install --save mysql
+- npm install --save-dev nodemon
+- npm i jsonwebtoken
+- npm install dotenv
+
+Start the server
+
+-npm run server
