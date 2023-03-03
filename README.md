@@ -67,7 +67,7 @@ Mobile number length must not be more than 10.
 
 - http://localhost:8888/user/login
 
-User can login with user name or email id or mobile number nad password.
+User can login with user name or email id or mobile number and password.
 After login keep note of token and userId which will be required for further operation.
 
 ![Logo](https://www.linkpicture.com/q/login_3.png)
