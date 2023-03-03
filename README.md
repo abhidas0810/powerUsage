@@ -60,3 +60,9 @@ Then copy paste the mysql queries from powerUsage.sql file.
 - http://localhost:8888/user/register
 
 ![Logo](https://www.linkpicture.com/q/userregister.png)
+
+**REST API for user login**
+
+- http://localhost:8888/user/login
+
+![Logo]()
