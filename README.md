@@ -78,3 +78,9 @@ Then copy paste the mysql queries from powerUsage.sql file.
 - http://localhost:8888/powerUsage/addPowerUsage
 
 ![Logo](https://www.linkpicture.com/q/listPowerUsage.png)
+
+**REST API for getting list of power usage date wise**
+
+- http://localhost:8888/powerUsage/listPowerUsagePerDate
+
+![Logo](https://www.linkpicture.com/q/listPowerUsagePerDate.png)
