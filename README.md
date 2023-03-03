@@ -59,7 +59,7 @@ Then copy paste the mysql queries from powerUsage.sql file.
 
 - http://localhost:8888/user/register
 
-Mobile number must not be length more than 10.
+Mobile number length must not be more than 10.
 
 ![Logo](https://www.linkpicture.com/q/userregister.png)
 
