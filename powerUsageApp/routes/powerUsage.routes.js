@@ -62,4 +62,79 @@ router.post("/addPowerUsage", authentication, async (req, res) => {
   }
 });
 
+// REST API for getting list of power usage in given time
+router.post("/listPowerUsage", authentication, async (req, res) => {
+  try {
+    let timings = req.body;
+    // query for getting list of power usage in given time
+    let query =
+      " select * from powerUsage where fromTime >= ? and toTime <= ? and userId = ?;";
+    // putting values in query
+    await connection.query(
+      query,
+      [timings.startTime, timings.endTime, timings.userId],
+      (err, result) => {
+        if (!err) {
+          // returning successful response
+          return res.status(200).json(result);
+        }
+        // returning error response if occured while posting data in database
+        return res.status(400).json(err.message);
+      }
+    );
+  } catch (error) {
+    return res.status(400).json({ message: "something went wrong" });
+  }
+});
+
+// REST API for getting list of power usage in given time
+router.post("/listPowerUsage", authentication, async (req, res) => {
+  try {
+    let timings = req.body;
+    // query for getting list of power usage in given time
+    let query =
+      " select * from powerUsage where fromTime >= ? and toTime <= ? and userId = ?;";
+    // putting values in query
+    await connection.query(
+      query,
+      [timings.startTime, timings.endTime, timings.userId],
+      (err, result) => {
+        if (!err) {
+          // returning successful response
+          return res.status(200).json(result);
+        }
+        // returning error response if occured while searching data in database
+        return res.status(400).json(err.message);
+      }
+    );
+  } catch (error) {
+    return res.status(400).json({ message: "something went wrong" });
+  }
+});
+
+// REST API for getting list of power usage day wise
+router.post("/listPowerUsagePerDate", authentication, async (req, res) => {
+  try {
+    let timings = req.body;
+    // query for getting list of power usage in given time day wise
+    let query =
+      " select powerUsageId,fromTime,toTime,applianceType,userId,sum(unitsConsumed) as totalUnitsConsumed,sum(duration) as totalDuration from powerUsage where fromTime >= ? and toTime <= ? and userId = ? group by date(fromtime),date(toTime)";
+    // putting values in query
+    await connection.query(
+      query,
+      [timings.startTime, timings.endTime, timings.userId],
+      (err, result) => {
+        if (!err) {
+          // returning successful response
+          return res.status(200).json(result);
+        }
+        // returning error response if occured while searching data in database
+        return res.status(400).json(err.message);
+      }
+    );
+  } catch (error) {
+    return res.status(400).json({ message: "something went wrong" });
+  }
+});
+
 module.exports = router;
