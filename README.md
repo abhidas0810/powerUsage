@@ -4,7 +4,9 @@
 
 ## About
 
-The backend of power usage app where the user can register themselves. After registration user can login and add power usage, get list of power usage and get list of power usage day wise.
+
+This power usage tracker app will allow users to register themselves. After registration user can log in and add power usage multiple times a day. They can get a list of power usage day-wise or time slot-wise to facilitate the amount of power consumption done by them. 
+
 
 ## Author
 - [Abhishek Das](https://github.com/abhidas0810)
